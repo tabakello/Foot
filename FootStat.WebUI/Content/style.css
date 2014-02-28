@@ -1,0 +1,160 @@
+/*
+Project Name: Create a Responsive Web Design Template
+Author: Harry Atkins
+Published on: http://www.onextrapixel.com/
+*/
+
+::-moz-selection 	{ background-color: #91D8f7; color: #fff; }
+::selection 		{ background-color: #91D8f7; color: #fff; }
+
+a					{ outline: 0; color: #222; text-decoration: none; }
+a:hover 			{ text-decoration: underline; }
+p a:hover 			{ color: #27B3CF; }
+a:active 			{ outline: none; position: relative; top: 2px; }
+
+.clearfix 			{ clear: both; }
+
+/*------------------------------------*\
+  MAIN
+\*------------------------------------*/
+
+body { 
+	background: #4BB748 url('/Content/Img/bg.jpg');
+     color: #222; font-family: 'Droid Serif', serif; font-size: 16px; 
+	-webkit-transition-property: font-size;
+	-moz-transition-property: font-size;
+	transition-property: font-size;
+	-webkit-transition-duration: 0.5s, 0.5s;
+	-moz-transition-duration: 0.5s, 0.5s;
+	transition-duration: 0.5s, 0.5s; 
+	-webkit-transition-timing function: linear, ease-in;
+	-moz-transition-timing function: linear, ease-in; 
+	transition-timing function: linear, ease-in; 
+}
+
+#wrapper { margin: 10px auto; max-width: 980px; width: 90%; background: #fff; padding: 0; }
+header { padding: 3px; }
+
+h1 { font-size: 90px; font-family: 'Droid Serif', serif; line-height: 75px; padding: 10px; 
+	-webkit-transition-property: font-size;
+	-moz-transition-property: font-size;
+	transition-property: font-size;
+	-webkit-transition-duration: 0.5s, 0.5s;
+	-moz-transition-duration: 0.5s, 0.5s;
+	transition-duration: 0.5s, 0.5s; 
+	-webkit-transition-timing function: linear, ease-in;
+	-moz-transition-timing function: linear, ease-in; 
+	transition-timing function: linear, ease-in;  
+}
+h1 a:hover { text-decoration: none; color: #27B3CF; }
+
+h2 { font-family: 'Helvetica'; font-size: 17px; padding: 10px; 
+	-webkit-transition-property: font-size;
+	-moz-transition-property: font-size;
+	transition-property: font-size;
+	-webkit-transition-duration: 0.5s, 0.5s;
+	-moz-transition-duration: 0.5s, 0.5s;
+	transition-duration: 0.5s, 0.5s; 
+	-webkit-transition-timing function: linear, ease-in;
+	-moz-transition-timing function: linear, ease-in; 
+	transition-timing function: linear, ease-in;
+}
+h3 { font-family: 'Droid Serif', serif; font-size: 30px; margin-top: -3px; }
+h4 { font-family: 'Droid Serif', serif; padding: 3px;font-size: 30px; margin: 5px 0 0 0; margin-top: -3px; }
+h4 a { text-decoration: underline; }
+h4 a:hover {  text-decoration: underline }
+h6 { font-family: 'Droid Serif', serif; font-size: 30px; margin-top: -3px; }
+h6 a { text-decoration: none;}
+h6 a:hover { text-decoration: none; }
+nav { background: #222; padding: 0; margin: 10px 0; }
+nav a { color: #F9F9F9; display: block; float: left; padding: 10px; }
+nav a:visited { color: #f9f9f9; }
+nav a:hover	{ text-decoration: none; background: #27B3CF; }
+nav a:active { position: relative; top: 0; }
+
+.left-col { width: 60%; float: left; }
+.sidebar { width: 30%; float: right; margin-bottom: 10px;
+	-webkit-transition-property: width;
+	-moz-transition-property: width;
+	transition-property: width;
+	-webkit-transition-duration: 0.5s, 0.5s;
+	-moz-transition-duration: 0.5s, 0.5s;
+	transition-duration: 0.5s, 0.5s; 
+	-webkit-transition-timing function: linear, ease-in;
+	-moz-transition-timing function: linear, ease-in; 
+	transition-timing function: linear, ease-in;
+}
+
+#featured 			{ padding: 10px;background-color: #E4EFFC; }
+#latest				{ padding: 10px; }
+#about 				{ padding: 10px; }
+
+p 					{ padding: 0 5px 0 5px; }
+
+ul 					{ list-style: none; }
+ul li 				{ margin: 0 5px; }
+
+footer 				{ padding: 5px; }
+
+pre					{ overflow: scroll; font-size: 10px; }
+.menuButton { float: right; margin: 10px; display: none; }
+.LigueDiv{ width: 90%; text-align: center}
+.countryFlagMenu { max-width: 20px; width: 30%; margin-right: 4px; }
+.logoLigue { max-height: 35px; margin-right: 10px; float: left; }
+.tourneyTable { border-collapse: collapse; border: 1px solid #4CB848; font-size: 95%; }
+.tourneyTable tr { background-color: #fff; border: 1px solid #C0D2E6; }
+/*Ukraine*/
+.tr-1-4, .tr-2-4 { background-color: #D8F490 !important; }
+.tr-3-4, .tr-4-4,.tr-5-4,.tr-6-4 { background-color: #E9FFB3 !important; }
+.tr-15-4, .tr-16-4 { background-color: #FFE0C1 !important; }
+/*Spain*/
+.tr-1-2, .tr-2-2, .tr-3-2, .tr-4-2 { background-color: #D8F490 !important; }
+.tr-5-2, .tr-6-2 { background-color: #E9FFB3 !important; }
+.tr-18-2, .tr-19-2, .tr-20-2 { background-color: #FFE0C1 !important; }
+/*France*/
+.tr-1-3, .tr-2-3, .tr-3-3 { background-color: #D8F490 !important; }
+.tr-4-3, .tr-5-3 { background-color: #E9FFB3 !important; }
+.tr-18-3, .tr-19-3, .tr-20-3 {background-color: #FFE0C1 !important;}
+/*England*/
+.tr-1-5, .tr-2-5, .tr-3-5, .tr-4-5 {background-color: #D8F490 !important;}
+.tr-5-5, .tr-6-5 {background-color: #E9FFB3 !important;}
+.tr-7-5 {background-color: #F2FFD1 !important;}
+.tr-18-5, .tr-19-5, .tr-20-5 {background-color: #FFE0C1 !important;}
+/*Italy*/
+.tr-1-6, .tr-2-6, .tr-3-6  {background-color: #D8F490 !important;}
+.tr-4-6, .tr-5-6 {background-color: #E9FFB3 !important;}
+.tr-6-6 {background-color: #F2FFD1 !important;}
+.tr-18-6, .tr-19-6, .tr-20-6 {background-color: #FFE0C1 !important;}
+/*Germany*/
+.tr-1-7, .tr-2-7, .tr-3-7  {background-color: #D8F490 !important;}
+.tr-4-7, .tr-5-7 {background-color: #E9FFB3 !important;}
+.tr-6-7 {background-color: #F2FFD1 !important;}
+.tr-18-7 {background-color: #FFE0C1 !important;}
+.tableMatches { border-collapse: collapse; }
+.tableMatches tr:nth-child(2n) {background: #f0f0f0; } 
+.tableMatches tr:nth-child(1) {background: #fff; }
+.tableMatches td {padding: 5px 10px 5px 10px ;}
+.tableMatches tr {border: 1px solid #E6E7E7;}
+.tableMatches tr {border: 1px solid #E6E7E7;}
+.tableMatches tr:hover {background-color: #E3EFFC;}
+.tableMatches tr:nth-child(1):hover {background: #fff;}
+
+
+.commandLogoFirst {float: left; max-width: 100px;width: 33%;max-width: 170px; }
+.commandLogoSecond {float: left; max-width: 100px;width: 33%;max-width: 170px; }
+.matchInfo { background: url('Img/bg3.jpg') 92%;background-size: cover;  text-align: center;font-weight: bold;width: 92%;height: 220px;margin: 0 auto;max-width: 510px;border: 1px #3399FF solid; }
+.matchDate { background-color: #E1EDFC; padding: 4px; max-width: 230px; margin: 0 auto; color: #1E1E1E; font-weight: bold;margin-top: 10px; }
+.allScore{float: left; margin-top: 60px; font-size: 35px;width: 33%;max-width: 170px; }
+.commandLogoImg {  max-height: 100px;}
+
+
+/*.matchInfo { background: url('Img/bg3.jpg'); height: 200px; max-width: 530px; min-width: 490px !important; 
+             border: 1px solid #E3EFFC; padding-top: 20px; text-align: center;float: left; }
+.score { background-color: #1E1E1E; padding: 7px; color: #79C7FB; }
+.commandLogoFirst { float: left; width: 120px; }
+.commandLogoSecond { float: right; width: 120px; }
+.commandLogoImg { max-width: 120px; max-height: 100px; }
+.allScore { font-size: 40px; float: left; margin: 50px 50px auto; width: 150px; }
+.commandName { color: #053B71; font-weight: bold; font-size: 14px; }
+.matchDate { background-color: #E1EDFC; padding: 4px; max-width: 230px; margin: 0 auto; color: #1E1E1E; font-weight: bold; }
+*/

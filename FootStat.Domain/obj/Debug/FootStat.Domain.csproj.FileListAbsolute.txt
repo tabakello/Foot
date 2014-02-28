@@ -1,0 +1,15 @@
+D:\FootStat\FootStat.Domain\bin\Debug\FootStat.Domain.dll
+D:\FootStat\FootStat.Domain\bin\Debug\FootStat.Domain.pdb
+D:\FootStat\FootStat.Domain\obj\Debug\FootStat.Domain.dll
+D:\FootStat\FootStat.Domain\obj\Debug\FootStat.Domain.pdb
+D:\FootStat\FootStat.Domain\bin\Debug\FootStat.Domain.dll.config
+D:\FootStat\FootStat.Domain\bin\Debug\EntityFramework.dll
+D:\FootStat\FootStat.Domain\bin\Debug\EntityFramework.xml
+E:\FootStat\FootStat.Domain\bin\Debug\FootStat.Domain.dll.config
+E:\FootStat\FootStat.Domain\bin\Debug\FootStat.Domain.dll
+E:\FootStat\FootStat.Domain\bin\Debug\FootStat.Domain.pdb
+E:\FootStat\FootStat.Domain\bin\Debug\EntityFramework.dll
+E:\FootStat\FootStat.Domain\bin\Debug\EntityFramework.xml
+E:\FootStat\FootStat.Domain\obj\Debug\FootStat.Domain.dll
+E:\FootStat\FootStat.Domain\obj\Debug\FootStat.Domain.pdb
+E:\FootStat\FootStat.Domain\obj\Debug\FootStat.Domain.csprojResolveAssemblyReference.cache
