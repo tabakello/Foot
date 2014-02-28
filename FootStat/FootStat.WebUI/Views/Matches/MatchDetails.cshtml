@@ -1,0 +1,106 @@
+﻿@model FootStat.WebUI.Models.MatchDetailsViewModel
+
+@{
+    var a = Model.Match.Command.ShortNameRu + "-" + Model.Match.Command1.ShortNameRu;
+    ViewBag.Title = a;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+  
+<div id="featured">
+    <img src="@Model.Tourney.LogoUrl" class="logoLigue" alt="@Model.Tourney.Name"/><h3>@Model.Tourney.Name</h3>
+</div> 
+<div id="latest">
+    <section class="left-col">
+        <div class="matchInfo">
+            <div class="matchDate">
+                @Model.Match.Tour @Model.Match.Date.ToLongDateString()
+            </div>
+            <div class="commandLogoFirst">
+                <img src="@Model.Match.Command.LogoUrl" class="commandLogoImg" alt="@Model.Match.Command.ShortNameRu"/><br/>
+                <div class="commandName">@Model.Match.Command.ShortNameRu</div>
+            </div>
+            <div class="allScore">
+                @if (Model.Match.ResultId != 4) {
+                    <div> <span class="score"> @Model.Match.ScoreFirstCommandId </span> : <span class="score"> @Model.Match.ScoreSecondCommandId </span> </div>
+                } else {
+                    <div> <span class="score">--</span> : <span class="score">--</span></div>
+                }
+            </div>
+            <div class="commandLogoSecond">
+                <img src="@Model.Match.Command1.LogoUrl" class="commandLogoImg" alt="@Model.Match.Command1.ShortNameRu"/><br/>
+                <div  class="commandName">@Model.Match.Command1.ShortNameRu</div>
+            </div>
+        </div>
+        @if (Model.Match.ResultId == 4) {
+            <div style="margin-left: 10px;">
+                <h2>Последние игры команд:</h2>
+                <table class="tableMatches">
+                    <tr>
+                        <td>@Model.LastGameHomeCommand.Date.ToShortDateString()</td>
+                        <td style="color: #2C79C0">@Model.LastGameHomeCommand.Command.ShortNameRu</td>
+                        <td>@Model.LastGameHomeCommand.ScoreFirstCommandId - @Model.LastGameHomeCommand.ScoreSecondCommandId</td>
+                        <td>@Model.LastGameHomeCommand.Command1.ShortNameRu</td>
+                        <td>@Html.ActionLink("View", "MatchDetails", new { id = Model.LastGameHomeCommand.Id })</td>
+                    </tr>
+                    <tr>
+                        <td>@Model.LastGameAwayCommand.Date.ToShortDateString()</td>
+                        <td>@Model.LastGameAwayCommand.Command.ShortNameRu</td>
+                        <td>@Model.LastGameAwayCommand.ScoreFirstCommandId - @Model.LastGameAwayCommand.ScoreSecondCommandId</td>
+                        <td style="color: #2C79C0">@Model.LastGameAwayCommand.Command1.ShortNameRu</td>
+                        <td>@Html.ActionLink("View", "MatchDetails", new { id = Model.LastGameAwayCommand.Id })</td>
+                    </tr>
+                </table>
+                <h2>Голы:</h2>
+                <p>
+                    Хозяева забили @Model.ScoredGoalsAtHome голов за @Model.CountMatchesAtHome игр дома
+                </p>
+                <p>
+                    Гости забили @Model.ScoredGoalsAtAway голов за @Model.CountMatchesAtAway игр на выезде
+                </p>
+            </div>
+        } else {
+            <table class="tableMatches" style="margin: 15px auto; text-align: center">
+                @foreach (var p in Model.MatchDetails) {
+
+                    if (p.CommandId == Model.Match.Command1.Id) {
+                        <tr>
+                            <td>@p.Person</td>
+                            <td>@p.MatchDetailType.Name</td>
+                            <td>@p.Min'</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    } else {
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>@p.Min'</td>
+                            <td>@p.MatchDetailType.Name</td>
+                            <td>@p.Person</td>
+                        </tr>
+                    }
+
+                }
+            </table>
+        }
+    </section>
+    <aside class="sidebar">
+        <div class="LigueDiv">
+            <table class="tourneyTable">
+                @if (Model.TournamentTable.Any()) {
+                    var i = 1;
+                    foreach (var p in Model.TournamentTable) {
+                        <tr class="tr-@i-@p.TourneyId">
+                            <td>@i</td>
+                            <td>@p.Command.ShortNameRu</td>
+                            <td>@p.Games</td>
+                            <td>@p.Points</td>
+                        </tr>
+                        i++;
+                    }
+                }
+            </table>
+        </div>
+    </aside>
+</div>
+<div class="clearfix"></div>

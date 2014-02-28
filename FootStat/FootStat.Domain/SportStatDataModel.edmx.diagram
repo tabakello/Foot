@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eb30758d9f5d40fe8305003e0e1e717a" Name="Diagram1">
+        <EntityTypeShape EntityType="SportStatModel.Command" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportStatModel.Forecast" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportStatModel.Match" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportStatModel.Result" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportStatModel.Season" Width="1.5" PointX="5.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportStatModel.Tourney" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="SportStatModel.Command_TourneyId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SportStatModel.Match_FirstCommandId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SportStatModel.Match_SecondCommandId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SportStatModel.Match_ForecastId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SportStatModel.Match_ResultId_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="SportStatModel.Match_TourneyId_FK" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SportStatModel.TournamentTable" Width="1.5" PointX="6.9969205833025843" PointY="15.137628234521312" />
+        <AssociationConnector Association="SportStatModel.TournamentTable_CommandId_FK" />
+        <AssociationConnector Association="SportStatModel.TournamentTable_TourneyId_FK" />
+        <EntityTypeShape EntityType="SportStatModel.MatchDetail" Width="1.5" PointX="7.2275883514562569" PointY="19.128858232465042" />
+        <EntityTypeShape EntityType="SportStatModel.MatchDetailType" Width="1.5" PointX="4.6413582566386831" PointY="8.9399037253763076" />
+        <AssociationConnector Association="SportStatModel.MatchDetail_CommandId_FK" />
+        <AssociationConnector Association="SportStatModel.MatchDetail_MatchId_FK" />
+        <AssociationConnector Association="SportStatModel.MatchDetail_DetailTypeId_FK" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SportStatModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="SportStatModelStoreContainer">
+    <EntitySet Name="Command" EntityType="SportStatModel.Store.Command" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Forecast" EntityType="SportStatModel.Store.Forecast" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Match" EntityType="SportStatModel.Store.Match" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Result" EntityType="SportStatModel.Store.Result" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Season" EntityType="SportStatModel.Store.Season" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TournamentTable" EntityType="SportStatModel.Store.TournamentTable" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tourney" EntityType="SportStatModel.Store.Tourney" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="Command_TourneyId_FK" Association="SportStatModel.Store.Command_TourneyId_FK">
+      <End Role="Tourney" EntitySet="Tourney" />
+      <End Role="Command" EntitySet="Command" />
+    </AssociationSet>
+    <AssociationSet Name="Match_FirstCommandId_FK" Association="SportStatModel.Store.Match_FirstCommandId_FK">
+      <End Role="Command" EntitySet="Command" />
+      <End Role="Match" EntitySet="Match" />
+    </AssociationSet>
+    <AssociationSet Name="Match_ForecastId_FK" Association="SportStatModel.Store.Match_ForecastId_FK">
+      <End Role="Forecast" EntitySet="Forecast" />
+      <End Role="Match" EntitySet="Match" />
+    </AssociationSet>
+    <AssociationSet Name="Match_ResultId_FK" Association="SportStatModel.Store.Match_ResultId_FK">
+      <End Role="Result" EntitySet="Result" />
+      <End Role="Match" EntitySet="Match" />
+    </AssociationSet>
+    <AssociationSet Name="Match_SecondCommandId_FK" Association="SportStatModel.Store.Match_SecondCommandId_FK">
+      <End Role="Command" EntitySet="Command" />
+      <End Role="Match" EntitySet="Match" />
+    </AssociationSet>
+    <AssociationSet Name="Match_TourneyId_FK" Association="SportStatModel.Store.Match_TourneyId_FK">
+      <End Role="Tourney" EntitySet="Tourney" />
+      <End Role="Match" EntitySet="Match" />
+    </AssociationSet>
+    <AssociationSet Name="TournamentTable_CommandId_FK" Association="SportStatModel.Store.TournamentTable_CommandId_FK">
+      <End Role="Command" EntitySet="Command" />
+      <End Role="TournamentTable" EntitySet="TournamentTable" />
+    </AssociationSet>
+    <AssociationSet Name="TournamentTable_TourneyId_FK" Association="SportStatModel.Store.TournamentTable_TourneyId_FK">
+      <End Role="Tourney" EntitySet="Tourney" />
+      <End Role="TournamentTable" EntitySet="TournamentTable" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Command">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TourneyId" Type="int" Nullable="false" />
+    <Property Name="CommandNameEn" Type="varchar" MaxLength="50" />
+    <Property Name="ShortNameEn" Type="varchar" MaxLength="50" />
+    <Property Name="CommandNameRu" Type="varchar" MaxLength="50" />
+    <Property Name="ShortNameRu" Type="varchar" MaxLength="50" />
+    <Property Name="Rate" Type="int" />
+    <Property Name="Actual" Type="bit" Nullable="false" />
+    <Property Name="LogoUrl" Type="varchar" Nullable="false" MaxLength="155" />
+  </EntityType>
+  <EntityType Name="Forecast">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Match">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TourneyId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Tour" Type="varchar" MaxLength="50" />
+    <Property Name="FirstCommandId" Type="int" Nullable="false" />
+    <Property Name="SecondCommandId" Type="int" Nullable="false" />
+    <Property Name="ResultId" Type="int" Nullable="false" />
+    <Property Name="ScoreFirstCommandId" Type="int" Nullable="false" />
+    <Property Name="ScoreSecondCommandId" Type="int" Nullable="false" />
+    <Property Name="TopMatch" Type="bit" />
+    <Property Name="ForecastId" Type="int" Nullable="false" />
+    <Property Name="SeasonId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Result">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Season">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TournamentTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TourneyId" Type="int" Nullable="false" />
+    <Property Name="SeasonId" Type="int" Nullable="false" />
+    <Property Name="CommandId" Type="int" Nullable="false" />
+    <Property Name="Points" Type="int" />
+    <Property Name="Games" Type="int" />
+    <Property Name="Missed" Type="int" />
+    <Property Name="Scored" Type="int" />
+  </EntityType>
+  <EntityType Name="Tourney">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="ShortNameRu" Type="varchar" MaxLength="55" />
+    <Property Name="CountComannds" Type="int" Nullable="false" />
+    <Property Name="LogoUrl" Type="varchar" MaxLength="155" />
+    <Property Name="CountryFlag" Type="varchar" Nullable="false" MaxLength="155" />
+  </EntityType>
+  <Association Name="Command_TourneyId_FK">
+    <End Role="Tourney" Type="SportStatModel.Store.Tourney" Multiplicity="1" />
+    <End Role="Command" Type="SportStatModel.Store.Command" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tourney">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Command">
+        <PropertyRef Name="TourneyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Match_FirstCommandId_FK">
+    <End Role="Command" Type="SportStatModel.Store.Command" Multiplicity="1" />
+    <End Role="Match" Type="SportStatModel.Store.Match" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Command">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Match">
+        <PropertyRef Name="FirstCommandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Match_ForecastId_FK">
+    <End Role="Forecast" Type="SportStatModel.Store.Forecast" Multiplicity="1" />
+    <End Role="Match" Type="SportStatModel.Store.Match" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Forecast">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Match">
+        <PropertyRef Name="ForecastId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Match_ResultId_FK">
+    <End Role="Result" Type="SportStatModel.Store.Result" Multiplicity="1" />
+    <End Role="Match" Type="SportStatModel.Store.Match" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Result">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Match">
+        <PropertyRef Name="ResultId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Match_SecondCommandId_FK">
+    <End Role="Command" Type="SportStatModel.Store.Command" Multiplicity="1" />
+    <End Role="Match" Type="SportStatModel.Store.Match" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Command">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Match">
+        <PropertyRef Name="SecondCommandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Match_TourneyId_FK">
+    <End Role="Tourney" Type="SportStatModel.Store.Tourney" Multiplicity="1" />
+    <End Role="Match" Type="SportStatModel.Store.Match" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tourney">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Match">
+        <PropertyRef Name="TourneyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TournamentTable_CommandId_FK">
+    <End Role="Command" Type="SportStatModel.Store.Command" Multiplicity="1" />
+    <End Role="TournamentTable" Type="SportStatModel.Store.TournamentTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Command">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TournamentTable">
+        <PropertyRef Name="CommandId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TournamentTable_TourneyId_FK">
+    <End Role="Tourney" Type="SportStatModel.Store.Tourney" Multiplicity="1" />
+    <End Role="TournamentTable" Type="SportStatModel.Store.TournamentTable" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tourney">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TournamentTable">
+        <PropertyRef Name="TourneyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

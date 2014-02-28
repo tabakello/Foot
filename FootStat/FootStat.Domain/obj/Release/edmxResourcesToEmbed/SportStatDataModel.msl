@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SportStatModelStoreContainer" CdmEntityContainer="SportStatEntities">
+    <EntitySetMapping Name="Commands">
+      <EntityTypeMapping TypeName="SportStatModel.Command">
+        <MappingFragment StoreEntitySet="Command">
+          <ScalarProperty Name="LogoUrl" ColumnName="LogoUrl" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TourneyId" ColumnName="TourneyId" />
+          <ScalarProperty Name="CommandNameEn" ColumnName="CommandNameEn" />
+          <ScalarProperty Name="ShortNameEn" ColumnName="ShortNameEn" />
+          <ScalarProperty Name="CommandNameRu" ColumnName="CommandNameRu" />
+          <ScalarProperty Name="ShortNameRu" ColumnName="ShortNameRu" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Actual" ColumnName="Actual" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Forecasts">
+      <EntityTypeMapping TypeName="SportStatModel.Forecast">
+        <MappingFragment StoreEntitySet="Forecast">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Matches">
+      <EntityTypeMapping TypeName="SportStatModel.Match">
+        <MappingFragment StoreEntitySet="Match">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TourneyId" ColumnName="TourneyId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Tour" ColumnName="Tour" />
+          <ScalarProperty Name="FirstCommandId" ColumnName="FirstCommandId" />
+          <ScalarProperty Name="SecondCommandId" ColumnName="SecondCommandId" />
+          <ScalarProperty Name="ResultId" ColumnName="ResultId" />
+          <ScalarProperty Name="ScoreFirstCommandId" ColumnName="ScoreFirstCommandId" />
+          <ScalarProperty Name="ScoreSecondCommandId" ColumnName="ScoreSecondCommandId" />
+          <ScalarProperty Name="TopMatch" ColumnName="TopMatch" />
+          <ScalarProperty Name="ForecastId" ColumnName="ForecastId" />
+          <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Results">
+      <EntityTypeMapping TypeName="SportStatModel.Result">
+        <MappingFragment StoreEntitySet="Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seasons">
+      <EntityTypeMapping TypeName="SportStatModel.Season">
+        <MappingFragment StoreEntitySet="Season">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tourneys">
+      <EntityTypeMapping TypeName="SportStatModel.Tourney">
+        <MappingFragment StoreEntitySet="Tourney">
+          <ScalarProperty Name="CountryFlag" ColumnName="CountryFlag" />
+          <ScalarProperty Name="LogoUrl" ColumnName="LogoUrl" />
+          <ScalarProperty Name="CountComannds" ColumnName="CountComannds" />
+          <ScalarProperty Name="ShortNameRu" ColumnName="ShortNameRu" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TournamentTables">
+      <EntityTypeMapping TypeName="SportStatModel.TournamentTable">
+        <MappingFragment StoreEntitySet="TournamentTable">
+          <ScalarProperty Name="Scored" ColumnName="Scored" />
+          <ScalarProperty Name="Missed" ColumnName="Missed" />
+          <ScalarProperty Name="Games" ColumnName="Games" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="CommandId" ColumnName="CommandId" />
+          <ScalarProperty Name="SeasonId" ColumnName="SeasonId" />
+          <ScalarProperty Name="TourneyId" ColumnName="TourneyId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

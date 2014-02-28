@@ -1,0 +1,7 @@
+D:\FootStat\FootStat.Domain\bin\Release\FootStat.Domain.dll.config
+D:\FootStat\FootStat.Domain\bin\Release\FootStat.Domain.dll
+D:\FootStat\FootStat.Domain\bin\Release\FootStat.Domain.pdb
+D:\FootStat\FootStat.Domain\bin\Release\EntityFramework.dll
+D:\FootStat\FootStat.Domain\bin\Release\EntityFramework.xml
+D:\FootStat\FootStat.Domain\obj\Release\FootStat.Domain.dll
+D:\FootStat\FootStat.Domain\obj\Release\FootStat.Domain.pdb
